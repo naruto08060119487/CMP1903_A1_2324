@@ -16,6 +16,25 @@ namespace CMP1903_A1_2324
          */
 
         //Methods
+        public string PLay()
+        {
+            Die die1 = new Die();
+            Die die2 = new Die();
+            Die die3 = new Die();
+
+            int roll1 = die1.Roll(); //rolls the die three times
+            int roll2 = die2.Roll();
+            int roll3 = die3.Roll();
+
+            int total = roll1 + roll2 + roll3;
+            
+            Console.WriteLine("die 1 is: " + roll1);
+            Console.WriteLine("die 2 is: " + roll2);//prints out the output of each roll
+            Console.WriteLine("die 3 is: " + roll3);
+            Console.WriteLine("total is: " + total);
+                
+            return $"die 1 is: {roll1}\ndie 2 is: {roll2}\ndie 3 is: {roll3}\ntotal is: {total}";//returns the output of the rolls
+        }
 
     }
 }
