@@ -19,7 +19,7 @@ namespace CMP1903_A1_2324
                 Testing.GameTest();// testing the game
                 Console.WriteLine(" ");
                 Console.WriteLine("original Game");
-                dice.PLay();
+                dice.PLay();//initial games
         }
     }
 }
