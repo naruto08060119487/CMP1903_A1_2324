@@ -14,6 +14,12 @@ namespace CMP1903_A1_2324
              * Create a Game object and call its methods.
              * Create a Testing object to verify the output and operation of the other classes.
              */
+            Game dice= new Game();
+                Testing.DieTest(); //testing the die
+                Testing.GameTest();// testing the game
+                Console.WriteLine(" ");
+                Console.WriteLine("original Game");
+                dice.PLay();
         }
     }
 }
