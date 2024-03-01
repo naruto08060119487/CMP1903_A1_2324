@@ -17,6 +17,14 @@ namespace CMP1903_A1_2324
 
 
         //Method
+        public int StoreValue { get; private set; } //to store the value gotten from rolling the dice
+
+        public int Roll()
+        {
+            Random random = new Random();
+            StoreValue = random.Next(1, 7); //generates a random number between 1 and 6 then stores it in StoreValue
+            return StoreValue;
+        }
 
 
     }

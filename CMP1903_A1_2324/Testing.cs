@@ -16,5 +16,27 @@ namespace CMP1903_A1_2324
          */
 
         //Method
+        public static void DieTest()//TestDie method
+        {
+            Die die = new Die();
+            int outcome = die.Roll(); //creates a die to be tested
+
+            Debug.Assert(outcome < 1 || outcome >= 7, "Die test failed");// compares the output of the DieTEst
+            
+            
+            
+        }
+
+        public static void GameTest()//GameTest method
+        { //CREATES TWO GAMES AND COMPARES THEIR METHODS
+            Game game = new Game();
+            Console.WriteLine("Test 1");
+            string test1 = game.PLay(); //Game 1
+            Console.WriteLine(" ");
+            Console.WriteLine("Test 2");
+            string test2 = game.PLay();//Game 2
+
+            Debug.Assert(test1 == test2, "Game test Failed");
+        }
     }
 }
