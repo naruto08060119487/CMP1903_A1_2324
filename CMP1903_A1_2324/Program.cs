@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +12,17 @@ namespace CMP1903_A1_2324
         {
             /*
              * Create a Game object and call its methods.
-             * Create a Testing object to verify the output and operation of the other classes.
              */
             Game dice= new Game();
-                Testing.DieTest(); //testing the die
-                Testing.GameTest();// testing the game
-                Console.WriteLine(" ");
-                Console.WriteLine("original Game");
-                dice.PLay();//initial games
+            Console.WriteLine("original Game");
+            dice.PLay();//initial games
+            
+             /* Create a Testing object to verify the output and operation of the other classes.
+             */
+            Testing test = new Testing();
+            test.GameTest();// testing the game and Die
+            Console.WriteLine(" ");
+                
         }
     }
 }

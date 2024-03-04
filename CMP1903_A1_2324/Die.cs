@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,13 +17,13 @@ namespace CMP1903_A1_2324
 
 
         //Method
-        public int StoreValue { get; private set; } //to store the value gotten from rolling the dice
+        public int storeValue { get; private set; } //to store the value gotten from rolling the dice
 
         public int Roll()
         {
             Random random = new Random();
-            StoreValue = random.Next(1, 7); //generates a random number between 1 and 6 then stores it in StoreValue
-            return StoreValue;
+            storeValue = random.Next(1, 7); //generates a random number between 1 and 6 then stores it in storeValue
+            return storeValue;
         }
 
 
