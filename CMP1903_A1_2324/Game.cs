@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +16,7 @@ namespace CMP1903_A1_2324
          */
 
         //Methods
-        public string PLay()
+        public int PLay()
         {
             Die die1 = new Die();
             Die die2 = new Die();
@@ -32,8 +32,9 @@ namespace CMP1903_A1_2324
             Console.WriteLine("die 2 is: " + roll2);//prints out the output of each roll
             Console.WriteLine("die 3 is: " + roll3);
             Console.WriteLine("total is: " + total);
-                
-            return $"die 1 is: {roll1}\ndie 2 is: {roll2}\ndie 3 is: {roll3}\ntotal is: {total}";//returns the output of the rolls
+
+            return total;// returns the sum of the rolls
+
         }
 
     }
