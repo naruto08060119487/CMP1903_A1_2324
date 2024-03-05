@@ -15,7 +15,7 @@ namespace CMP1903_A1_2324
          */
         public void GameTest() //GameTest method
         {
-            //CREATES TWO GAMES AND COMPARES THEIR METHODS
+            //CREATES A GAME OBJECT 
             Game game = new Game();
             Console.WriteLine("Test 1");
             int test1 = game.PLay(); //this uses the game class method
