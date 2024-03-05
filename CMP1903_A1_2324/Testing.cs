@@ -21,7 +21,7 @@ namespace CMP1903_A1_2324
             int test1 = game.PLay(); //this uses the game class method
 
 
-            Debug.Assert(test1 < 3 || test1 > 18,"Game test Failed"); //this compares the outcome of the game to see is the total is
+            Debug.Assert(test1 > 3 || test1 > 18,"Game test Failed"); //this compares the outcome of the game to see is the total is
             //within 3 - 18
 
             /* Create a Die object and call its method.
