@@ -16,7 +16,7 @@ namespace CMP1903_A1_2324
         /// and also ending the program at will
         /// the game class has one method and takes no arguments
         /// </summary>
-        public void PLay()
+        public int PLay()
         {
             SevensOut sevensOut = new SevensOut();
             ThreeOrMore threeOrMore = new ThreeOrMore();
@@ -138,6 +138,8 @@ namespace CMP1903_A1_2324
                     Console.WriteLine("invalid pick, choose between 1 & 2");
                 }
             }
+
+            return 1;
         }
 
     }

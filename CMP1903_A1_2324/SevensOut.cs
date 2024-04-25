@@ -18,7 +18,8 @@ namespace CMP1903_A1_2324
             
             int total = 0; //this stores the incremented total all through the match
             int triesUntilSeven = 0; //stores the amount of tries it took until a total of seven is gotten
-
+            int rollValue = 0;
+            
             bool reply = true;
             
 
@@ -39,7 +40,7 @@ namespace CMP1903_A1_2324
                             int roll = die1.Roll(); //rolls the die
                             int roll2 = die2.Roll();
 
-                            int rollValue = roll + roll2;
+                            rollValue = roll + roll2;
 
                             if (rollValue != 7)
                             {
@@ -82,7 +83,7 @@ namespace CMP1903_A1_2324
                             int roll = die1.Roll();
                             int roll2 = die2.Roll();
 
-                            int rollValue = roll + roll2;
+                            rollValue = roll + roll2;
 
                             if (rollValue != 7)
                             {
@@ -122,7 +123,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine("");
             stats.TriesUntilSeven(triesUntilSeven);
             stats.HighScore(triesUntilSeven, total);
-            return total;
+            return rollValue ;
         }
     }
 }
