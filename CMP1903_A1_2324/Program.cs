@@ -13,15 +13,48 @@ namespace CMP1903_A1_2324
             /*
              * Create a Game object and call its methods.
              */
-            Game dice= new Game();
-            Console.WriteLine("original Game");
-            dice.PLay();//initial games
+            bool sam = true;
+            while (sam)
+            {
+                Console.WriteLine("1.Play game");
+                Console.WriteLine("2.Test Game");
+                Console.WriteLine("3.exit");
+                string reply = Console.ReadLine();
+                switch (reply)
+                {
+                    case "1":
+                        Console.WriteLine("Loading Game");
+                        Game dice= new Game();
+                        Console.WriteLine("original Game");
+                        dice.PLay();//initial games
+                        break;
+                    
+                    case "2":
+                        Console.WriteLine("Loading Testing");
+                        Console.WriteLine("Which game do you want to test");
+                        Console.WriteLine("1.");
+                        Testing test = new Testing();
+                        //test.TestSevenout();
+                        test.GameTest();// testing the game and Die
+                        Console.WriteLine(" ");
+                        break;
+                    case "3":
+                        Console.WriteLine("exiting now");
+                        sam = false;
+                        break;
+                    
+                    default:
+                        Console.WriteLine("invalid response");
+                        continue;
+                }
+            }
+           
+            
+           
             
              /* Create a Testing object to verify the output and operation of the other classes.
              */
-            Testing test = new Testing();
-            test.GameTest();// testing the game and Die
-            Console.WriteLine(" ");
+           
                 
         }
     }

@@ -1,0 +1,14 @@
+sam 7
+number of Tries until Seven 1
+number of Tries until Seven 1
+number of Tries until Seven 6
+number of Tries until Seven 3
+number of Tries until Seven 10
+number of Tries until Seven 2
+number of Tries until Seven 7
+number of Tries until Seven 13
+number of Tries until Seven 3
+number of Tries until Seven 6
+number of Tries until Seven 14
+number of Tries until Seven 5
+number of Tries until Seven 4
