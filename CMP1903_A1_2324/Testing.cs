@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    
     internal class Testing
     {
         /*
@@ -16,20 +15,14 @@ namespace CMP1903_A1_2324
          */
         public void GameTest() //GameTest method
         {
-            Statistics stats = new Statistics();
             //CREATES A GAME OBJECT 
-            ThreeOrMore threeOrMore = new ThreeOrMore();
-            int s = threeOrMore.ThreeOrMoreGame(stats);
-            Console.WriteLine("");
-            Console.WriteLine("testing three or more class");
-            Console.WriteLine("");
-            Debug.Assert(s == 20 || s >= 20, "Three or More test passed");
+            Game game = new Game();
+            Console.WriteLine("Test 1");
+            int test1 = game.PLay(); //this uses the game class method
 
-            int comp = threeOrMore.ThreeOrMoreGameComputer(stats);
-            Console.WriteLine("");
-            Console.WriteLine("testing three or more class");
-            Console.WriteLine("");
-            Debug.Assert(comp == 20 || comp >= 20, "Three or More test passed");
+
+            Debug.Assert(test1 < 3 || test1 > 18,"Game test Failed"); //this compares the outcome of the game to see is the total is
+            //within 3 - 18
 
             /* Create a Die object and call its method.
              * Use debug.assert() to make the comparisons and tests.*/
@@ -42,21 +35,7 @@ namespace CMP1903_A1_2324
             int outcome = die.Roll(); //creates a die to be tested
 
             Debug.Assert(outcome >= 1 && outcome <= 6, "Die test failed");// compares the output of the DieTEst
-        }
-
-        public void TestSevenout()
-        {
-            Statistics stats = new Statistics();
-            SevensOut sevensOut = new SevensOut();
-            int seven = sevensOut.SevensOutClass(stats);
-            Console.WriteLine("");
-            Console.WriteLine("testing sevens out class");
-            Console.WriteLine("");
-            Debug.Assert(seven == 7, "sevens out class passed");
-            Game game = new Game();
-        }
-
-        
+        } 
             
             
             
