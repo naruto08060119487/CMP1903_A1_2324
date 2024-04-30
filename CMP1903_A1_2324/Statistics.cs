@@ -159,7 +159,9 @@ namespace CMP1903_A1_2324
             string fileName = "scoreBoard.txt";
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             string filePath = Path.Combine(projectDirectory, fileName);
+            
             Console.WriteLine(filePath);
+            
             if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
             {
                 using (StreamWriter writer = new StreamWriter(filePath, true))
@@ -173,10 +175,9 @@ namespace CMP1903_A1_2324
             }
             
             
-
             string fileForTotalNumbers = "HighestTotalGotten.txt";
             string projectLocation = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            string fileLocation = Path.Combine(projectLocation, fileName);
+            string fileLocation = Path.Combine(projectLocation, fileForTotalNumbers);
             Console.WriteLine(fileLocation);
             if (File.Exists(fileLocation))//this verifies if the file exists before attempting to write to it
             {
@@ -201,7 +202,7 @@ namespace CMP1903_A1_2324
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;  // Get the parent directory of the current directory, which should be the project directory.
             
             string filePath = Path.Combine(projectDirectory, fileName); // Combine the project directory path with the file name to get the full file path.
-            if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to read it
             {
                 using (StreamReader readTotal = new StreamReader(filePath))
                 {
@@ -227,7 +228,7 @@ namespace CMP1903_A1_2324
             
             string filePath = Path.Combine(projectDirectory, fileName);// Combine the project directory path with the file name to get the full file path.
 
-            if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to read it
             {
                 using (StreamReader readTotal = new StreamReader(filePath))
                 {
@@ -246,7 +247,7 @@ namespace CMP1903_A1_2324
         /// <summary>
         /// this reads out the information written from the three or more class three or more 
         /// </summary>
-        public void ReadScoreLogThreeOrMore()//this verifies if the file exists before attempting to write to it
+        public void ReadScoreLogThreeOrMore()
         {
             Console.WriteLine("loading previous game statistics");
             string fileName = "highscore.txt";
@@ -254,7 +255,7 @@ namespace CMP1903_A1_2324
             
             string filePath = Path.Combine(projectDirectory, fileName);// Combine the project directory path with the file name to get the full file path.
 
-            if (File.Exists(filePath))
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to read it
             {
                 using (StreamReader read = new StreamReader(filePath))
                 {
