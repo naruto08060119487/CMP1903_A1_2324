@@ -180,3 +180,14 @@ Three Of A Kind 6
 Four Of A Kind 0
 Five Of A Kind 0
 =====================================
+=====================================
+Player 1
+Three Of A Kind 7
+Four Of A Kind 0
+Five Of A Kind 0
+
+Player 2
+Three Of A Kind 4
+Four Of A Kind 0
+Five Of A Kind 0
+=====================================

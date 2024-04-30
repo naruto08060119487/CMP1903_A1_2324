@@ -10,7 +10,7 @@ namespace CMP1903_A1_2324
     public class Statistics
     {
         /// <summary>
-        /// this display's the statistics of a game played, and saves the statistics to a file so can be viewed later
+        /// this display's the statistics of a game played, and saves the statistics to a file so can be viewed later also handles the concept of asking if a user wants to check scores after a match has been played
         /// </summary>
         /// <param name="player1ThreeOfaKind"></param>
         /// <param name="player1FourOfaKind"></param>
@@ -20,6 +20,7 @@ namespace CMP1903_A1_2324
         /// <param name="player2FiveOfaKind"></param>
         public void RecordGame(int player1ThreeOfaKind, int player1FourOfaKind, int player1FiveOfaKind, int player2ThreeOfaKind, int player2FourOfaKind, int player2FiveOfaKind)
         {
+           
             bool verify = true;
             while (verify)
             {
@@ -29,7 +30,7 @@ namespace CMP1903_A1_2324
                 string answer = Console.ReadLine();
                 if (answer == "1" || answer== "ThreeOrMore".ToLower() )
                 {
-                    Console.WriteLine("Player 1");//views the game statistics
+                    Console.WriteLine("Player 1");//displays the game statistics
                     Console.WriteLine($"Three Of A Kind {player1ThreeOfaKind}");
                     Console.WriteLine($"Four Of A Kind {player1FourOfaKind}");
                     Console.WriteLine($"Five Of A Kind {player1FiveOfaKind}");
@@ -39,44 +40,77 @@ namespace CMP1903_A1_2324
                     Console.WriteLine($"Three Of A Kind {player2ThreeOfaKind}");
                     Console.WriteLine($"Four Of A Kind {player2FourOfaKind}");
                     Console.WriteLine($"Five Of A Kind {player2FiveOfaKind}");
-                    
-                    using (StreamWriter write = new StreamWriter("/home/emmanuel/RiderProjects/highscore.txt", true)) //storing the match results in a .txt file
-                    {
-                        write.WriteLine("=================================");
-                        write.WriteLine($"Player 1");
-                        write.WriteLine($"Three Of A Kind {player1ThreeOfaKind}");
-                        write.WriteLine($"Four Of A Kind {player1FourOfaKind}");
-                        write.WriteLine($"Five Of A Kind {player1FiveOfaKind}");
-                        write.WriteLine("");
-                        write.WriteLine($"Player 2");
-                        write.WriteLine($"Three Of A Kind {player2ThreeOfaKind}");
-                        write.WriteLine($"Four Of A Kind {player2FourOfaKind}");
-                        write.WriteLine($"Five Of A Kind {player2FiveOfaKind}");
-                        write.WriteLine("=====================================");
 
+                   
+                    
+                    string fileName = "highscore.txt";
+                    string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+                    string filePath = Path.Combine(projectDirectory, fileName);
+                    Console.WriteLine(filePath);
+                    if (File.Exists(filePath)) //this verifies if the file exists before attempting to write to it
+                    {
+                        using (StreamWriter write = new StreamWriter(filePath, true)) //storing the match results in a .txt file
+                        {
+                            write.WriteLine("=================================");
+                            write.WriteLine($"Player 1");
+                            write.WriteLine($"Three Of A Kind {player1ThreeOfaKind}");
+                            write.WriteLine($"Four Of A Kind {player1FourOfaKind}");
+                            write.WriteLine($"Five Of A Kind {player1FiveOfaKind}");
+                            write.WriteLine("");
+                            write.WriteLine($"Player 2");
+                            write.WriteLine($"Three Of A Kind {player2ThreeOfaKind}");
+                            write.WriteLine($"Four Of A Kind {player2FourOfaKind}");
+                            write.WriteLine($"Five Of A Kind {player2FiveOfaKind}");
+                            write.WriteLine("=====================================");
+
+                        }
+                        
                     }
+
+                    else //prints an error message to show file does not exist
+                    {
+                        Console.WriteLine("no file to store game");
+                    }
+                    
+                    
 
                     verify = false;
                     
                 }
                 else if (answer == "2")
                 {
-                    Console.WriteLine("thanks for playing");
-                    using (StreamWriter write = new StreamWriter("/home/emmanuel/RiderProjects/highscore.txt", true)) //storing the match results in a .txt file
+                    string fileName = "highscore.txt";
+                    
+                    string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+                    
+                    string filePath = Path.Combine(projectDirectory, fileName);
+                    
+                    Console.WriteLine(filePath);
+                    
+                    if (File.Exists(filePath)) //this verifies if the file exists before attempting to write to it
                     {
-                        write.WriteLine("=====================================");
-                        write.WriteLine($"Player 1");
-                        write.WriteLine($"Three Of A Kind {player1ThreeOfaKind}");
-                        write.WriteLine($"Four Of A Kind {player1FourOfaKind}");
-                        write.WriteLine($"Five Of A Kind {player1FiveOfaKind}");
-                        write.WriteLine("");
-                        write.WriteLine($"Player 2");
-                        write.WriteLine($"Three Of A Kind {player2ThreeOfaKind}");
-                        write.WriteLine($"Four Of A Kind {player2FourOfaKind}");
-                        write.WriteLine($"Five Of A Kind {player2FiveOfaKind}");
-                        write.WriteLine("=====================================");
+                        using (StreamWriter write = new StreamWriter(filePath, true)) //storing the match results in a .txt file
+                        {
+                            write.WriteLine("=====================================");
+                            write.WriteLine($"Player 1");
+                            write.WriteLine($"Three Of A Kind {player1ThreeOfaKind}");
+                            write.WriteLine($"Four Of A Kind {player1FourOfaKind}");
+                            write.WriteLine($"Five Of A Kind {player1FiveOfaKind}");
+                            write.WriteLine("");
+                            write.WriteLine($"Player 2");
+                            write.WriteLine($"Three Of A Kind {player2ThreeOfaKind}");
+                            write.WriteLine($"Four Of A Kind {player2FourOfaKind}");
+                            write.WriteLine($"Five Of A Kind {player2FiveOfaKind}");
+                            write.WriteLine("=====================================");
 
+                        }
                     }
+                    else //prints an error message to show file does not exist
+                    {
+                        Console.WriteLine("no file to store game");
+                    }
+                    Console.WriteLine("thanks for playing");
+                    
                     verify = false;
                 }
                 else
@@ -116,22 +150,46 @@ namespace CMP1903_A1_2324
             }
         }
        /// <summary>
-       /// writes the tries taken until a sum of seven and the total points gotten was gotten in a txt file scoreBorard and HighestTotalGotten
+       /// writes the tries taken until a sum of seven and the total points gotten was gotten in a txt file scoreBoard and HighestTotalGotten
        /// </summary>
        /// <param name="triesUntilSeven"></param>
        /// <param name="total"></param>
         public void HighScore(int triesUntilSeven, int total)
         {
-            using (StreamWriter writer = new StreamWriter("/home/emmanuel/RiderProjects/scoreBoard.txt", true))
+            string fileName = "scoreBoard.txt";
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string filePath = Path.Combine(projectDirectory, fileName);
+            Console.WriteLine(filePath);
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
             {
-                writer.WriteLine($"number of Tries until Seven {triesUntilSeven}");
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine($"number of Tries until Seven {triesUntilSeven}");
+                }
             }
+            else //prints an error message to show file does not exist
+            {
+                Console.WriteLine("no file to store game stats");
+            }
+            
+            
 
-            string var = "/home/emmanuel/RiderProjects/HighestTotalGotten.txt";
-            using (StreamWriter write = new StreamWriter(var, true))
+            string fileForTotalNumbers = "HighestTotalGotten.txt";
+            string projectLocation = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string fileLocation = Path.Combine(projectLocation, fileName);
+            Console.WriteLine(fileLocation);
+            if (File.Exists(fileLocation))//this verifies if the file exists before attempting to write to it
             {
-                write.WriteLine($"Highest Total Accumulated {total}");
+                using (StreamWriter write = new StreamWriter(fileLocation, true))
+                {
+                    write.WriteLine($"Highest Total Accumulated {total}");
+                }
             }
+            else //prints an error message to show file does not exist
+            {
+                Console.WriteLine("no file to store game statistics");
+            }
+           
         }
         
         /// <summary>
@@ -142,13 +200,20 @@ namespace CMP1903_A1_2324
             string fileName = "scoreBoard.txt";
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;  // Get the parent directory of the current directory, which should be the project directory.
             
-            string filePath = Path.Combine(projectDirectory, fileName);// Combine the project directory path with the file name to get the full file path.
-            Console.WriteLine(filePath);
-            using (StreamReader readTotal = new StreamReader(filePath))
+            string filePath = Path.Combine(projectDirectory, fileName); // Combine the project directory path with the file name to get the full file path.
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
             {
-                string reading = readTotal.ReadToEnd();
-                Console.WriteLine(reading);
+                using (StreamReader readTotal = new StreamReader(filePath))
+                {
+                    string reading = readTotal.ReadToEnd();
+                    Console.WriteLine(reading);
+                }
             }
+            else //prints an error message to show file does not exist
+            {
+                Console.WriteLine("game statistics not available");
+            }
+            
             
         }
 
@@ -161,42 +226,48 @@ namespace CMP1903_A1_2324
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;  // Get the parent directory of the current directory, which should be the project directory.
             
             string filePath = Path.Combine(projectDirectory, fileName);// Combine the project directory path with the file name to get the full file path.
-            
-            using (StreamReader readTotal = new StreamReader(filePath))
+
+            if (File.Exists(filePath))//this verifies if the file exists before attempting to write to it
             {
-                string read = readTotal.ReadToEnd();
-                Console.WriteLine(read);
+                using (StreamReader readTotal = new StreamReader(filePath))
+                {
+                    string read = readTotal.ReadToEnd();
+                    Console.WriteLine(read);
+                }
             }
+            else //prints an error message to show file does not exist
+            {
+                Console.WriteLine("game statistics not available");
+            }
+            
         }
         
 
         /// <summary>
         /// this reads out the information written from the three or more class three or more 
         /// </summary>
-        public void ReadScoreLogThreeOrMore()
+        public void ReadScoreLogThreeOrMore()//this verifies if the file exists before attempting to write to it
         {
-            
             Console.WriteLine("loading previous game statistics");
             string fileName = "highscore.txt";
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;  // Get the parent directory of the current directory, which should be the project directory.
             
             string filePath = Path.Combine(projectDirectory, fileName);// Combine the project directory path with the file name to get the full file path.
+
+            if (File.Exists(filePath))
+            {
+                using (StreamReader read = new StreamReader(filePath))
+                {
+                    string line = read.ReadToEnd();
+                    Console.WriteLine(line);
+                }
+            }
+            else //prints an error message to show file does not exist
+            {
+                Console.WriteLine("game statistics not available");
+            }
             
-            using (StreamReader read = new StreamReader(filePath))
-            {
-                string line = read.ReadToEnd();
-                Console.WriteLine(line);
-            }
         }
-
-
-       /* public void File(string filepath)
-        {
-            string filer = "/home/emmanuel/RiderProjects/scoreBoard.txt";
-            using (StreamReader reader = new StreamReader(filepath))
-            {
-                
-            }
-        }*/
+        
     }
 }

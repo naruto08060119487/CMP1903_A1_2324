@@ -16,6 +16,7 @@ namespace CMP1903_A1_2324
             bool sam = true;
             while (sam)
             {
+                
                 Console.WriteLine("1.Play game");
                 Console.WriteLine("2.Test Game");
                 Console.WriteLine("3.exit");
@@ -27,6 +28,7 @@ namespace CMP1903_A1_2324
                         Game dice= new Game();
                         Console.WriteLine("original Game");
                         dice.PLay();//initial games
+                       
                         break;
                     
                     case "2":

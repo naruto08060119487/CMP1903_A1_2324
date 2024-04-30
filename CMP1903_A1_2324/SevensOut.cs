@@ -2,7 +2,7 @@ using System;
 
 namespace CMP1903_A1_2324
 {
-    public class SevensOut
+    public class SevensOut : Game
     {
         /// <summary>
         /// this class creates two instance of a die and rolls them, the game continues until a sum of seven is gotten by either player, before a sum of seven is gotten, the other values  
@@ -123,7 +123,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine("");
             stats.TriesUntilSeven(triesUntilSeven);
             stats.HighScore(triesUntilSeven, total);
-            return rollValue ;
+            return rollValue ; //returns the sum of 7
         }
     }
 }
