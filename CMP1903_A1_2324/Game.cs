@@ -56,6 +56,8 @@ namespace CMP1903_A1_2324
                             else if (reply == "2")
                             {
                                 threeOrMore.ThreeOrMoreGameComputer(stats);
+                                modeChoice = false;
+                                sam = false;
                             }
                             else
                             {
