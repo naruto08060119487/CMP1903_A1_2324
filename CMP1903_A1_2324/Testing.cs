@@ -44,7 +44,7 @@ namespace CMP1903_A1_2324
                         Debug.Assert(game.PLay() == game.PLay(), "game test failed"); //checks the game
                         break;
                     default:
-                        Console.WriteLine("invalid entry pick between 1 or 2");
+                        Console.WriteLine("invalid entry pick between 1 or 2 or 3");
                         continue;
                 }
 
