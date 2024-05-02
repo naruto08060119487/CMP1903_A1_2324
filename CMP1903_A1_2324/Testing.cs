@@ -41,7 +41,7 @@ namespace CMP1903_A1_2324
                         Debug.Assert(sevensOut.SevensOutClass(stats) > 7 || sevensOut.SevensOutClass(stats) < 7, "sevens out class test  failed"); //tests the sevens out class
                         break;
                     case "3":
-                        Debug.Assert(game.PLay() != game.PLay(), "game test failed"); //checks the game
+                        Debug.Assert(game.PLay() == game.PLay(), "game test failed"); //checks the game
                         break;
                     default:
                         Console.WriteLine("invalid entry pick between 1 or 2 or 3");
